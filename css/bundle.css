@@ -1,0 +1,38 @@
+.triangle {
+  position: fixed;
+  display: flex;
+  width: 0px;
+  height: 0px; }
+
+.triangle--upleft {
+  top: 0;
+  left: 0;
+  border-top: 100px solid blue;
+  border-right: 100px solid transparent; }
+
+.triangle--upright {
+  top: 0;
+  right: 0;
+  border-top: 100px solid #F34A53;
+  border-left: 100px solid transparent; }
+
+.triangle--downleft {
+  bottom: 0;
+  left: 0;
+  border-bottom: 100px solid #F34A53;
+  border-right: 100px solid transparent; }
+
+.triangle--downright {
+  bottom: 0;
+  right: 0;
+  border-bottom: 100px solid #F34A53;
+  border-left: 100px solid transparent; }
+  .triangle--downright a {
+    position: absolute;
+    top: -50px;
+    transform: rotate(45deg); }
+
+.triangle a {
+  position: absolute;
+  top: -50px;
+  transform: rotate(45deg); }

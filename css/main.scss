@@ -1,0 +1,357 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+body {
+    overflow:hidden;
+    font-family: 'Anonymous Pro', monospace;
+}
+/*
+NAVIGATION
+*/
+.triangle {
+    position: fixed;
+    display: flex;
+    width: 0px;
+	height: 0px;
+    a {
+        position: absolute;
+        text-decoration: none;
+        font-size: 2rem;
+        text-align: center;
+        padding: 5px;
+        color: white;
+        opacity: 0;
+        transition: 1.5s linear;
+        cursor: default;
+    }
+    img {
+        cursor: pointer;
+        transition: 1s ease;
+    }
+}
+.triangle--up {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 150px 150px 0 150px;
+    border-color: #F34A53 transparent transparent transparent;
+    a {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -140px;
+        color: white;
+        font-size: 3.5rem;
+        font-weight: bold;
+        &:hover {
+            font-size: 4rem;
+        }
+    }
+}
+.triangle--upleft {
+    top: 0;
+    left: 0;
+    border-top: 150px solid #6D0000;;
+    border-right: 150px solid transparent;
+    a {
+        visibility: hidden;
+        bottom: 45px;
+        right: -160px;
+        transform: rotate(-45deg);
+    }
+    img {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        margin: 5px;
+        width: 80px;
+        height: 80px;
+        transform: rotate(-45deg);
+        &:hover {
+            width: 85px;
+            height: 85px;
+            & ~ a {
+                visibility: visible;
+                opacity: 1;
+                }
+            }
+        }
+    }
+
+.triangle--upright {
+    top: 0;
+    right: 0;
+    border-top: 150px solid #6D0000;;
+    border-left: 150px solid transparent;
+    a {
+        visibility: hidden;
+        color: white;
+        top: -80px;
+        right: 45px;
+        transform: rotate(45deg);
+    }
+    img {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        margin: 10px;
+        width: 75px;
+        height: 75px;
+        transform: rotate(45deg);
+        &:hover {
+            width: 80px;
+            height: 80px;
+            & ~ a {
+                visibility: visible;
+                opacity: 1;
+
+            }
+        }
+    }
+}
+.triangle--downleft {
+    bottom: 0;
+    left: 0;
+    border-bottom: 150px solid #6D0000;
+    border-right: 150px solid transparent;
+    a {
+        visibility: hidden;
+        top:40px;
+        right: -150px;
+        transform: rotate(45deg);
+    }
+    img {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        margin: 10px;
+        width: 80px;
+        height: 80px;
+        transform: rotate(45deg);
+        &:hover {
+            width: 85px;
+            height: 85px;
+            & ~ a {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+.triangle--downright {
+    bottom: 0%;
+    right: 0%;
+    border-bottom: 150px solid #6D0000;
+    border-left: 150px solid transparent;
+    a {
+        visibility: hidden;
+        top: 40px;
+        left: -150px;
+        transform: rotate(-45deg);
+    }
+    img {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        margin: 5px;
+        width: 75px;
+        height: 75px;
+        transform: rotate(-45deg);
+        &:hover {
+            width: 80px;
+            height: 80px;
+            & ~ a {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+// MAIN SITE
+
+
+
+// OTHER SITES
+
+.line-1{
+    position: relative;
+    top: 40%;
+    left:0;
+    width: 24em;
+    height: auto;
+    color: white;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 300%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation:
+  typewriter 2s steps(100) 1s 1 normal both,
+             blinkTextCursor 500ms steps(100) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 15em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+.home {
+    background-image: url('/../img/man.jpeg');
+    height: 100vh;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+}
+
+.skills {
+    position: absolute;
+    background: url('/../img/book.png');
+        bottom: 100vh;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+        transition-property: top, bottom, left, right;
+        transition-duration: 1s;
+        &.clicked {
+            bottom: 0;
+            left:0;
+        }
+        .triangle--downright--othersite {
+            position: absolute;
+            width: 0px;
+        	height: 0px;
+            bottom: 0;
+            left: 0;
+            border-bottom: 150px solid blue;
+            border-right: 150px solid transparent;
+        }
+        a {
+            position: absolute;
+            text-decoration: none;
+            margin: 10px;
+            bottom: 0;
+            left: 0;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+}
+.contact {
+    position: absolute;
+        top: 100vh;
+        left: 100vw;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        z-index: 1;
+        background-color: white;
+        display: none;
+        transition-property: top, bottom, left, right;
+        transition-duration: 1s;
+        &.display {
+            display: inline-block;
+        }
+        &.clicked {
+            top: 0;
+            left: 0;
+        }
+        .triangle--downright--othersite {
+            position: absolute;
+            width: 0px;
+        	height: 0px;
+            top: 0;
+            left: 0;
+            text-decoration: none;
+            border-top: 150px solid blue;
+            border-right: 150px solid transparent;
+        }
+        a {
+            position: absolute;
+            margin: 10px;
+            top: 0;
+            left: 0;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+}
+.aboutme {
+    position: absolute;
+        bottom: 100vh;
+        right: 100vw;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background-color: white;
+        transition-duration: 1s;
+        &.clicked {
+            bottom: 0;
+            right:0;
+        }
+        .triangle--downright--othersite {
+            position: absolute;
+            width: 0px;
+        	height: 0px;
+            bottom: 0;
+            right: 0;
+            border-bottom: 150px solid blue;
+            border-left: 150px solid transparent;
+        }
+        a {
+            position: absolute;
+            margin: 10px;
+            bottom: 0;
+            right: 0;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+}
+.portfolio {
+    position: absolute;
+        top: 100vh;
+        right: 100vw;
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background-color: white;
+        z-index: 1;
+        transition-property: top, bottom, left, right;
+        transition-duration: 1s;
+        &.clicked {
+            top: 0;
+            right:0;
+        }
+        .triangle--downright--othersite {
+            position: absolute;
+            width: 0px;
+        	height: 0px;
+            top: 0;
+            right: 0;
+            border-top: 150px solid blue;
+            border-left: 150px solid transparent;
+        }
+        a {
+            position: absolute;
+            margin: 10px;
+            top: 0;
+            right: 0;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+}
